@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'about' => 'welcome#about'
-
-  get 'index' => 'welcome#index'
-
-  root "welcome#index"
+  resources :registered_apps, except: [:update]
 
   devise_for :users
+
+  root "welcome#about"
 
 end
