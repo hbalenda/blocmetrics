@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
+  has_many :registered_apps
+  attr_accessor :login
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  attr_accessor :login
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
