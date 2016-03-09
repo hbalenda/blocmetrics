@@ -70,9 +70,12 @@
         null,
         1,
         2,
+        2,
         null,
         null,
         1,
+        3,
+        3,
         3,
         null,
         null,
@@ -86,6 +89,7 @@
         2,
         2,
         null,
+        0,
         0,
         null,
         null,
@@ -117,6 +121,19 @@
         null,
         null
       ],
+      "/Users/hbalenda/Projects/blocmetrics/spec/models/event_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
+      ],
+      "/Users/hbalenda/Projects/blocmetrics/app/models/event.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/hbalenda/Projects/blocmetrics/spec/models/registered_app_spec.rb": [
         1,
         null,
@@ -124,10 +141,10 @@
         2,
         2,
         2,
-        null,
         null
       ],
       "/Users/hbalenda/Projects/blocmetrics/app/models/registered_app.rb": [
+        1,
         1,
         1,
         21,
@@ -142,6 +159,6 @@
         null
       ]
     },
-    "timestamp": 1457472180
+    "timestamp": 1457555812
   }
 }
