@@ -1,18 +1,20 @@
 require 'factory_girl_rails'
 
+User.create(username: "hcbviolet", email: "hcbviolet@gmail.com", password:"helloworld")
+
 10.times do
   FactoryGirl.create(:user)
 end
 
 users = User.all
 
-25.times do
+30.times do
   FactoryGirl.create(:registered_app, user: users.sample)
 end
 
 registered_apps = RegisteredApp.all
 
-75.times do
+150.times do
   FactoryGirl.create(:event, registered_app: registered_apps.sample)
 end
 
