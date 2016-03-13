@@ -1,7 +1,6 @@
 class API::EventsController < ApplicationController
   before_filter :set_access_control_headers
   skip_before_action :verify_authenticity_token
-  rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
@@ -9,17 +8,18 @@ class API::EventsController < ApplicationController
     headers['Access-Control-Allow-Headers'] = 'Content-Type'
   end
 
-  def not_found
-    render json: "Unregistered application", status: :unprocessable_entity
-  end
-
   def create
     registered_app = RegisteredApp.find_by(url: request.env['HTTP_ORIGIN'])
-    event = registered_app.events.new(event_params)
-    if event.save?
-      render json: @event, status: :created
+    if registered_app.nil?
+      render json: "Unregistered application", status: :unprocessable_entity
     else
-      render json: { errors: @event.errors }, status: :unprocessable_entity
+      @event = registered_app.events.new(event_params)
+      if @event.valid?
+        @event.save!
+        render json: @event, status: :created
+      else
+        render json: { errors: @event.errors }, status: :unprocessable_entity
+      end
     end
   end
 
