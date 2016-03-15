@@ -1,6 +1,7 @@
 class API::EventsController < ApplicationController
+  skip_before_action :verify_authenticity_token, if: :json_request?
+  skip_before_filter :authenticate_user!, only: [:create]
   before_filter :set_access_control_headers
-  skip_before_action :verify_authenticity_token
 
   def set_access_control_headers
     headers['Access-Control-Allow-Origin'] = '*'
@@ -9,7 +10,6 @@ class API::EventsController < ApplicationController
   end
 
   def create
-    binding.pry
     registered_app = RegisteredApp.find_by(url: request.env['HTTP_ORIGIN'])
     if registered_app.nil?
       render json: "Unregistered application", status: :unprocessable_entity
@@ -32,5 +32,9 @@ class API::EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name)
+  end
+
+  def json_request?
+    request.format.json?
   end
 end
