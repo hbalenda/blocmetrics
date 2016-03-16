@@ -10,6 +10,7 @@ It contains:
 # Configuration
 
 1) Sign up and register your application(s).
+
 2) Add to your application.js folder:
 ```javascript
   var blocmetrics = {};
