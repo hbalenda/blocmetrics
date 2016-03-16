@@ -2,7 +2,7 @@
 <%= form_for registered_app do |f| %>
   <div class="form-group">
     <%= f.text_field :name, class: 'form-control', placeholder: "Application name"%>
-    <%= f.text_field :url, class: 'form-control', placeholder: "http://www.example-thing.com"%>
-    <%= f.submit "Submit Task", class: 'btn btn-info pull-right' %>
+    <%= f.text_field :url, class: 'form-control', placeholder: 'URL (e.g. "http://www.example-thing.com")'%>
+    <%= f.submit "Register Application", class: 'btn btn-info pull-right' %>
   </div>
 <% end %>

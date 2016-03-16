@@ -13,11 +13,14 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
+gem 'bootswatch-rails'
 gem 'figaro'
 gem 'pry-rails'
 gem 'devise'
 gem 'pg'
+gem "chartkick"
 gem 'rack-cors', :require => 'rack/cors'
+gem 'groupdate'
 
 group :development, :test do
   gem 'byebug'
