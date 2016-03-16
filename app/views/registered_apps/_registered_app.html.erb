@@ -1,5 +1,5 @@
 <tbody>
-  <%= content_tag :tr, class: "info" do %>
+  <%= content_tag :tr do %>
     <td><%= link_to registered_app.name, registered_app %></td>
     <td><%= link_to '', [registered_app], method: :delete, class: 'glyphicon glyphicon-trash white' %></td>
   <% end %>
