@@ -18,6 +18,7 @@ gem 'figaro'
 gem 'pry-rails'
 gem 'devise'
 gem 'pg'
+gem 'unicorn'
 gem "chartkick"
 gem 'rack-cors', :require => 'rack/cors'
 gem 'groupdate'
