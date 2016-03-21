@@ -20,5 +20,6 @@ staging:
 production:
   <<: *default
   database: blocmetrics_prod
+  host: /tmp
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
